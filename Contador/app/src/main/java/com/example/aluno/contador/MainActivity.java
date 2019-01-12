@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         displayTimeB(placarB);
     }
 
+    
+
     public void sobre(View view){
         Intent intent = new Intent(this, Sobre.class);
         startActivity(intent);
