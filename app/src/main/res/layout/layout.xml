@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#63cf82">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageView"
+        android:text="Email"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/email"
+        android:text="Senha"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/buton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/senha"
+        android:layout_centerHorizontal="true"
+        android:text="Entrar"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buton"
+        android:text="Se vossa senhoria não é cadastrado, chega mais"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>
