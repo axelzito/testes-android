@@ -27,17 +27,18 @@
         android:text="Senha"
         android:layout_centerHorizontal="true"/>
     <Button
-        android:id="@+id/buton"
+        android:id="@+id/entrar"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_below="@id/senha"
         android:layout_centerHorizontal="true"
-        android:text="Entrar"/>
+        android:text="Entrar"
+        android:onClick="entrar"/>
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buton"
+        android:layout_below="@id/entrar"
         android:text="Se vossa senhoria não é cadastrado, chega mais"
         android:textAlignment="center"
         android:layout_marginTop="20dp"
