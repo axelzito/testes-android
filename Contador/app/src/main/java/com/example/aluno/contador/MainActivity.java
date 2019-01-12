@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addtirolivreA(View view) {
-        placarA = placarA + 2;
+        placarA = placarA + 1;
         displayTimeA(placarA);
     }
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addtirolivreB(View view) {
-        placarB = placarB + 2;
+        placarB = placarB + 1;
         displayTimeB(placarB);
     }
 
