@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pontos"
+                android:text="0"
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
                 android:textSize="25dp"
@@ -54,13 +54,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="+ 2 Pontos"
-                    android:id="@+id/pontos2A"/>
+                    android:id="@+id/pontos2A"
+                    android:onClick="add2pontosA"/>
 
                 <Button
                     android:id="@+id/tirolivreA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tiro Livre" />
+                    android:text="Tiro Livre"
+                    android:onClick="addtirolivreA"/>
             </LinearLayout>
 
 
@@ -86,12 +88,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pontos"
+                android:text="0"
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
                 android:textSize="25dp"
-                android:id="@+id/pontosB"
-                />
+                android:id="@+id/pontosB" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -103,19 +104,21 @@
                     android:layout_height="wrap_content"
                     android:text="+ 3 Pontos"
                     android:id="@+id/pontos3B"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:onClick="add3pontosB"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="+ 2 Pontos"
-                    android:id="@+id/pontos2B"/>
+                    android:id="@+id/pontos2B"
+                    android:onClick="add2pontosB"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tiro Livre"
-                    android:id="@+id/tirolivreB"/>
+                    android:id="@+id/tirolivreB"
+                    android:onClick="addtirolivreB"/>
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -123,7 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/reset"
-            android:text="Reset"/>
+            android:text="Reset"
+            android:onClick="reset"/>
 
     </RelativeLayout>
 

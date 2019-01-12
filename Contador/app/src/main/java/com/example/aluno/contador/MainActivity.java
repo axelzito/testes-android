@@ -26,4 +26,41 @@ public class MainActivity extends AppCompatActivity {
         displayTimeA(placarA);
     }
 
+    public void add2pontosA(View view) {
+        placarA = placarA + 2;
+        displayTimeA(placarA);
+    }
+
+    public void addtirolivreA(View view) {
+        placarA = placarA + 2;
+        displayTimeA(placarA);
+    }
+
+    public void displayTimeB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.pontosB);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void add3pontosB(View view) {
+        placarB = placarB + 3;
+        displayTimeB(placarB);
+    }
+
+    public void add2pontosB(View view) {
+        placarB = placarB + 2;
+        displayTimeB(placarB);
+    }
+
+    public void addtirolivreB(View view) {
+        placarB = placarB + 2;
+        displayTimeB(placarB);
+    }
+
+    public void reset(View view) {
+        placarA = 0;
+        displayTimeA(placarA);
+        placarB = 0;
+        displayTimeB(placarB);
+    }
+
 }
