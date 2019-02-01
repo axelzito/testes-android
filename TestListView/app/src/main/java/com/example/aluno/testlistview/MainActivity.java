@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("TAG", "usuário clicou no item: " + lista.getItemAtPosition(position).toString());
                 Toast.makeText(getApplicationContext(),"Você clicou em: "+ equipes.get(position).toString(),Toast.LENGTH_LONG).show();
-                mostraTela();
+                mostraTela(equipes.get(position).toString());
             }
         });
 
     }
 
-    private void mostraTela() {
+    private void mostraTela(String equipe) {
         Intent it = new Intent(this, AtmActivity.class);
-        //it.putExtra("times", equipes);
+        it.putExtra("equipe", equipe);
         startActivity(it);
     }
     private ArrayList<String> preecheDados() {
