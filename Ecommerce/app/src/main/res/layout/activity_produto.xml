@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.aluno.ecommerce.Produto">
 
+    <ImageView
+        android:id="@+id/imagem_produto"
+        android:layout_width="106dp"
+        android:layout_height="85dp" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
