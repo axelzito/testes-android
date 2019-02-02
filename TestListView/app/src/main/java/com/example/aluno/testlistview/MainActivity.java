@@ -1,18 +1,12 @@
 package com.example.aluno.testlistview;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/*
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -41,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("equipe", equipe);
         startActivity(it);
     }
+
     private ArrayList<String> preecheDados() {
         ArrayList<String> dados = new ArrayList<String>();
         dados.add("Atletico de Madrid");
@@ -56,5 +51,45 @@ public class MainActivity extends AppCompatActivity {
 
         return dados;
     }
-
 }
+*/
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final ListView lista = (ListView) findViewById(R.id.listEquipe);
+        final ArrayList<Times> equipes = preencheDados();
+
+        TimesAdapter adapter = new TimesAdapter(this,equipes);
+        lista.setAdapter(adapter);
+
+    }
+
+    private ArrayList<Times> preencheDados() {
+
+        ArrayList<Times> dados = new ArrayList<Times>();
+
+        Times t = new Times("Atletico de Madrid",R.drawable.atleti);
+        dados.add(t);
+
+        t = new Times("Banfield",R.drawable.banfield);
+        dados.add(t);
+
+        t = new Times("Paramore",R.drawable.hayley);
+        dados.add(t);
+
+       /* t = new Times("Santos",R.drawable.santos);
+        dados.add(t);
+
+        t = new Times("Flamengo",R.drawable.flamengo);
+        dados.add(t);*/
+
+        return dados;
+    }
+}
+
+
