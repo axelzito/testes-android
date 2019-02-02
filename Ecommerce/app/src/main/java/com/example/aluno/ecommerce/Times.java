@@ -1,10 +1,12 @@
 package com.example.aluno.ecommerce;
 
+import java.io.Serializable;
+
 /**
  * Created by axel on 02/02/19.
  */
 
-public class Times{
+public class Times implements Serializable {
 
     private String nome;
     private String subnome;

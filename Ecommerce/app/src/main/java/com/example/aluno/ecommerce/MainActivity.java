@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,17 +30,25 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("TAG", "usuário clicou no item: " + lista.getItemAtPosition(position).toString());
                 Toast.makeText(getApplicationContext(),"Você clicou em: "+ equipes.get(position).toString(),Toast.LENGTH_LONG).show();
-                mostraTela(equipes.get(position).getNome(), equipes.get(position).getSubnome(), equipes.get(position).getImagem());
+                //mostraTela(equipes.get(position).getNome(), equipes.get(position).getSubnome(), equipes.get(position).getImagem());
+                mostraTela(equipes.get(position));
             }
         });
 
     }
 
+    /*
     private void mostraTela(String equipe, String subtext, int imagem) {
         Intent it = new Intent(this, Produto.class);
         it.putExtra("equipe", equipe);
         it.putExtra("subtext", subtext);
         it.putExtra("imagem", imagem);
+        startActivity(it);
+    } */
+
+    private void mostraTela(Times times) {
+        Intent it = new Intent(this, Produto.class);
+        it.putExtra("times", times);
         startActivity(it);
     }
 
