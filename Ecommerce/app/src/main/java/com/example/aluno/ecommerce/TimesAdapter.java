@@ -31,9 +31,13 @@ public class TimesAdapter extends ArrayAdapter<Times> {
         View rowView = inflater.inflate(R.layout.item,parent,false);
 
         TextView nome = (TextView) rowView.findViewById(R.id.nome);
+        TextView subnome = (TextView) rowView.findViewById(R.id.subnome);
+        TextView preco = (TextView) rowView.findViewById(R.id.preco);
         ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
 
         nome.setText(elementos.get(position).getNome());
+        subnome.setText(elementos.get(position).getSubnome());
+        //preco.setText((int) elementos.get(position).getPreco());
         imagem.setImageResource(elementos.get(position).getImagem());
         return rowView;
     }
