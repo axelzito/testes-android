@@ -10,14 +10,14 @@ public class Times implements Serializable {
 
     private String nome;
     private String subnome;
-    private double preco;
+    private String preco;
     private int imagem;
 
     public Times(){
 
     }
 
-    public Times(String nome, String subnome, double preco, int imagem){
+    public Times(String nome, String subnome, String preco, int imagem){
         this.nome = nome;
         this.subnome = subnome;
         this.preco = preco;
@@ -44,9 +44,9 @@ public class Times implements Serializable {
         this.imagem = imagem;
     }
 
-    public double getPreco() { return preco; }
+    public String getPreco() { return preco; }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 }

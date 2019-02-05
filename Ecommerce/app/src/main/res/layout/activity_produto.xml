@@ -6,15 +6,64 @@
     android:layout_height="match_parent"
     tools:context="com.example.aluno.ecommerce.Produto">
 
-    <ImageView
-        android:id="@+id/imagem_produto"
-        android:layout_width="106dp"
-        android:layout_height="85dp" />
-
-
-    <TextView
-        android:layout_width="match_parent"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="412dp"
         android:layout_height="match_parent"
-        android:id="@+id/produto_texto"/>
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imagem_produto"
+            android:layout_width="106dp"
+            android:layout_height="85dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="53dp"
+            android:src="@drawable/atleti" />
+
+        <TextView
+            android:id="@+id/produto_texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="169dp"
+            android:layout_marginBottom="294dp"
+            android:text="texto"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/produto_texto_detalhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="177dp"
+            android:layout_marginBottom="239dp"
+            android:text="detalhe" />
+
+        <TextView
+            android:id="@+id/produto_preco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="191dp"
+            android:layout_marginBottom="121dp"
+            android:text="555" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imagem_produto"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="48dp"
+            android:text="Comprar" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

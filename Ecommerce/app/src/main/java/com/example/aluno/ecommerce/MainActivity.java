@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Times> dados = new ArrayList<Times>();
 
-        Times t = new Times("Iphone 8s 100% original dos bons pá tal topzera", "tela 5' 8 de ram processador topzera etc e tal", 5000, R.drawable.atleti);
+        Times t = new Times("Iphone 8s 100% original dos bons pá tal topzera", "tela 5' 8 de ram processador topzera etc e tal", "R$ 5000,00", R.drawable.atleti);
         dados.add(t);
 
        /* t = new Times("Banfield",R.drawable.banfield);

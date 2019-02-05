@@ -23,6 +23,12 @@ public class Produto extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.produto_texto);
         textView.append(time.getNome());
 
+        TextView textView2 = (TextView) findViewById(R.id.produto_preco);
+        textView2.append(time.getPreco());
+
+        TextView textView3 = (TextView) findViewById(R.id.produto_texto_detalhe);
+        textView3.append(time.getSubnome());
+
         ImageView imgView = (ImageView) findViewById(R.id.imagem_produto);
         imgView.setImageResource(time.getImagem());
 
