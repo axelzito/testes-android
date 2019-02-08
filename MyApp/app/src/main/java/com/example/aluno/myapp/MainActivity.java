@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public void entrar(View view) {
         Intent intent = new Intent(this, Logado.class);
         TextView email = (TextView) findViewById(R.id.email);
-        String login = email.getText().toString();
+        String login = "Olá, " + email.getText().toString();
         intent.putExtra("bla", login);
         startActivity(intent);
     }
