@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppCamera</string>
+    <string name="error_permission_not_granted">Deu ruim fera</string>
+    <string name="permission_request_canceled">Kd as permissao?</string>
+    <string name="title_error">erro titulo</string>
+    <string name="label_ok">label ok</string>
+</resources>
