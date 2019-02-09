@@ -28,7 +28,8 @@
             android:id="@+id/botao_listar"
             android:text="Listar Livros"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="listarLivros"/>
 
     </RelativeLayout>
 

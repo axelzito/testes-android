@@ -22,4 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         //intent = new Intent();
     }
+
+    public void listaLivros(){
+        startActivity(new Intent(this, ListarLivroActivity.class));
+    }
 }
