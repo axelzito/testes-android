@@ -25,7 +25,7 @@ public class ListarLivroActivity extends AppCompatActivity {
         Controller crud = new Controller(getBaseContext());
         rvLivros = (RecyclerView) findViewById(R.id.lista_itens);
 
-       // livros = new ArrayList<>();
+        // livros = new ArrayList<>();
         livros = crud.carregaDados();
 
         /*livros.add(new Livro(1, "aaa", "bbb", "ccc"));
@@ -39,7 +39,8 @@ public class ListarLivroActivity extends AppCompatActivity {
         livroAdapter = new LivroAdapter(livros);
 
         rvLivros.setAdapter(livroAdapter);
-        rvLivros.setLayoutManager(new GridLayoutManager(this, 2));
+        //rvLivros.setLayoutManager(new GridLayoutManager(this, 2));
+        rvLivros.setLayoutManager(new LinearLayoutManager(this));
         rvLivros.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 }

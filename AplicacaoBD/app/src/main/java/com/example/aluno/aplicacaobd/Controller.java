@@ -78,7 +78,7 @@ public class Controller {
         db = banco.getReadableDatabase();
 
         Cursor cursor = db.query(CriaBanco.TABELA, new String[] {
-                CriaBanco.ID, CriaBanco.TITULO, CriaBanco.AUTOR, CriaBanco.EDITORA },
+                        CriaBanco.ID, CriaBanco.TITULO, CriaBanco.AUTOR, CriaBanco.EDITORA },
                 CriaBanco.ID + "=?",
                 new String[] {String.valueOf(id) },
                 null,

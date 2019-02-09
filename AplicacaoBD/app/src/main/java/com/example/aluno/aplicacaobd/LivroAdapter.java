@@ -42,23 +42,25 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroViewHol
         notifyItemInserted(livros.size() - 1);
     }
 
-     class LivroViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class LivroViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-         TextView tvName;
+        TextView tvName, tvAutor;
 
-         LivroViewHolder(View itemView) {
+        LivroViewHolder(View itemView) {
             super(itemView);
-             tvName = itemView.findViewById(R.id.tvName);
-             itemView.setOnClickListener(this);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvAutor = itemView.findViewById(R.id.tvAutor);
+            itemView.setOnClickListener(this);
         }
 
         void bind(Livro livro) {
             tvName.setText(livro.getTitulo());
+            tvAutor.setText(livro.getAutor());
         }
 
-         @Override
-         public void onClick(View view) {
+        @Override
+        public void onClick(View view) {
             Toast.makeText(view.getContext(), livros.get(getAdapterPosition()).getTitulo(), Toast.LENGTH_SHORT).show();
-         }
-     }
+        }
+    }
 }
