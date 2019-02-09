@@ -6,13 +6,30 @@
     android:layout_height="match_parent"
     tools:context="com.example.aluno.aplicacaobd.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:layout_height="511dp"
+        android:background="#b95555">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/botao_adicionar"
+            android:text="Adicionar Livro"
+            android:layout_above="@+id/botao_listar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="58dp"
+            android:onClick="add_livro"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/botao_listar"
+            android:text="Listar Livros"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

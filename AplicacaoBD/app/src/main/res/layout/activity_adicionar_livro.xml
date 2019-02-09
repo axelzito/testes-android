@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aluno.aplicacaobd.AdicionarLivro">
+
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:layout_height="511dp"
+        android:background="#c6ca44">
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Nome Livro"
+            android:id="@+id/nome_livro"
+            android:layout_marginBottom="44dp"
+            android:layout_above="@+id/nome_autor"
+            android:layout_alignStart="@+id/nome_autor" />
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Nome Autor"
+            android:id="@+id/nome_autor"
+            android:layout_above="@+id/nome_editora"
+            android:layout_alignStart="@+id/nome_editora"
+            android:layout_marginBottom="47dp" />
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Nome Editora"
+            android:id="@+id/nome_editora"
+            android:layout_marginBottom="170dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/botao_adicionar_dados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp"
+            android:text="Adicionar Livro" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
