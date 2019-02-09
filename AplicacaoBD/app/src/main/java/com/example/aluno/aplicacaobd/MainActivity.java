@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnListar;
+    Button btnAdicionar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnListar = (Button) findViewById(R.id.botao_listar);
         btnListar.setOnClickListener(this);
+
+        btnAdicionar = (Button) findViewById(R.id.botao_adicionar);
+        btnAdicionar.setOnClickListener(this);
     }
 
     private void addlivro() {
@@ -32,6 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(this, ListarLivroActivity.class));
+
+        if (view.getId() == R.id.botao_listar) {
+            startActivity(new Intent(this, ListarLivroActivity.class));
+        }
+
+        if (view.getId() == R.id.botao_adicionar) {
+            startActivity(new Intent(this, AdicionarLivro.class));
+        }
     }
 }

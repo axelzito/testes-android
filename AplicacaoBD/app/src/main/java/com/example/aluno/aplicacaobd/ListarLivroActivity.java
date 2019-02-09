@@ -22,18 +22,18 @@ public class ListarLivroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listar_livro);
-
+        Controller crud = new Controller(getBaseContext());
         rvLivros = (RecyclerView) findViewById(R.id.lista_itens);
 
-        livros = new ArrayList<>();
+       // livros = new ArrayList<>();
+        livros = crud.carregaDados();
 
-
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
-        livros.add(new Livro("1", "aaa", "bbb", "ccc"));
+        /*livros.add(new Livro(1, "aaa", "bbb", "ccc"));
+        livros.add(new Livro(1, "aaa", "bbb", "ccc"));
+        livros.add(new Livro(1, "aaa", "bbb", "ccc"));
+        livros.add(new Livro(1, "aaa", "bbb", "ccc"));
+        livros.add(new Livro(1, "aaa", "bbb", "ccc"));
+        livros.add(new Livro(1, "aaa", "bbb", "ccc"));*/
 
 
         livroAdapter = new LivroAdapter(livros);

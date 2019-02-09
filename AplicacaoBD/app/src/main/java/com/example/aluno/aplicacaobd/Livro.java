@@ -6,7 +6,7 @@ package com.example.aluno.aplicacaobd;
 
 public class Livro {
 
-    public String id;
+    public int id;
     public String titulo;
     public String autor;
     public String editor;
@@ -14,18 +14,18 @@ public class Livro {
     public Livro() {
     }
 
-    public Livro(String id, String titulo, String autor, String editor) {
+    public Livro(int id, String titulo, String autor, String editor) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.editor = editor;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

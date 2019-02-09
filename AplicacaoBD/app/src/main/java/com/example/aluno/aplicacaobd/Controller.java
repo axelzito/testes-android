@@ -60,7 +60,7 @@ public class Controller {
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 Livro livro = new Livro();
-                livro.setId(cursor.getString(0));
+                livro.setId(Integer.parseInt(cursor.getString(0)));
                 livro.setTitulo(cursor.getString(1));
                 livro.setAutor(cursor.getString(2));
                 livro.setEditor(cursor.getString(3));
@@ -89,7 +89,7 @@ public class Controller {
         if (cursor != null) {
             cursor.moveToFirst();
             livro = new Livro();
-            livro.setId(cursor.getString(0));
+            livro.setId(Integer.parseInt(cursor.getString(0)));
             livro.setTitulo(cursor.getString(1));
             livro.setAutor(cursor.getString(2));
             livro.setEditor(cursor.getString(3));
