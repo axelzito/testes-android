@@ -1,5 +1,7 @@
 package com.example.aluno.aplicacaobd;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,11 @@ import java.util.List;
 public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroViewHolder> {
 
     private List<Livro> livros;
+    private IExcluirLivro iExcluirLivro;
+
+    public void setiExcluirLivro(IExcluirLivro iExcluirLivro) {
+        this.iExcluirLivro = iExcluirLivro;
+    }
 
     public LivroAdapter(List<Livro> livros) {
         this.livros = livros;
@@ -42,6 +49,11 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroViewHol
         notifyItemInserted(livros.size() - 1);
     }
 
+    public void removeLivro(int position) {
+        livros.remove(position);
+        notifyItemRemoved(position);
+    }
+
     class LivroViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvName, tvAutor;
@@ -54,13 +66,34 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroViewHol
         }
 
         void bind(Livro livro) {
-            tvName.setText(livro.getTitulo());
-            tvAutor.setText(livro.getAutor());
+            tvName.setText("Nome livro: " + livro.getTitulo());
+            tvAutor.setText("Nome autor: " + livro.getAutor());
         }
 
         @Override
         public void onClick(View view) {
+
+            UIUtils.showAlertBuilder(view.getContext(), null, "Ecluir Livro", "Deseja excluir?", "Sim", "Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    if(i == DialogInterface.BUTTON_POSITIVE) {
+                        int position = getAdapterPosition();
+                        iExcluirLivro.ExcluirLivro(livros.get(position));
+                        removeLivro(position);
+                    }
+                }
+            }, new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialogInterface) {
+
+                }
+            });
             Toast.makeText(view.getContext(), livros.get(getAdapterPosition()).getTitulo(), Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    interface IExcluirLivro {
+        void ExcluirLivro(Livro livro);
     }
 }

@@ -10,19 +10,19 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListarLivroActivity extends AppCompatActivity {
+public class ListarLivroActivity extends AppCompatActivity implements LivroAdapter.IExcluirLivro {
 
     private LivroAdapter livroAdapter;
 
     private RecyclerView rvLivros;
 
     private List<Livro> livros;
-
+    Controller crud;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listar_livro);
-        Controller crud = new Controller(getBaseContext());
+        crud = new Controller(getBaseContext());
         rvLivros = (RecyclerView) findViewById(R.id.lista_itens);
 
         // livros = new ArrayList<>();
@@ -37,10 +37,16 @@ public class ListarLivroActivity extends AppCompatActivity {
 
 
         livroAdapter = new LivroAdapter(livros);
+        livroAdapter.setiExcluirLivro(this);
 
         rvLivros.setAdapter(livroAdapter);
         //rvLivros.setLayoutManager(new GridLayoutManager(this, 2));
         rvLivros.setLayoutManager(new LinearLayoutManager(this));
         rvLivros.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+    }
+
+    @Override
+    public void ExcluirLivro(Livro livro) {
+        crud.delete(livro);
     }
 }
