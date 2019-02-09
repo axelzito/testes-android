@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -41,18 +42,23 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroViewHol
         notifyItemInserted(livros.size() - 1);
     }
 
-     class LivroViewHolder extends RecyclerView.ViewHolder {
+     class LivroViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
          TextView tvName;
 
          LivroViewHolder(View itemView) {
             super(itemView);
              tvName = itemView.findViewById(R.id.tvName);
+             itemView.setOnClickListener(this);
         }
 
         void bind(Livro livro) {
             tvName.setText(livro.getTitulo());
         }
 
-    }
+         @Override
+         public void onClick(View view) {
+            Toast.makeText(view.getContext(), livros.get(getAdapterPosition()).getTitulo(), Toast.LENGTH_SHORT).show();
+         }
+     }
 }

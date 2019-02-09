@@ -3,6 +3,7 @@ package com.example.aluno.aplicacaobd;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -38,7 +39,7 @@ public class ListarLivroActivity extends AppCompatActivity {
         livroAdapter = new LivroAdapter(livros);
 
         rvLivros.setAdapter(livroAdapter);
-        rvLivros.setLayoutManager(new LinearLayoutManager(this));
+        rvLivros.setLayoutManager(new GridLayoutManager(this, 2));
         rvLivros.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 }
