@@ -8,6 +8,9 @@ class Pessoa {
     private String email;
     private String password;
 
+    public Pessoa() {
+    }
+
     public String getUid() {
         return uid;
     }
@@ -46,5 +49,16 @@ class Pessoa {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "uid='" + uid + '\'' +
+                ", nome='" + nome + '\'' +
+                ", apelido='" + apelido + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
