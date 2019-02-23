@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText nomeP, apelP, emailP, passwdP;
     ListView list_pessoas;
+    Pessoa pessoaSelecionada;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -47,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
         inicializaFirebase();
 
         listarDados();
+
+        list_pessoas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                pessoaSelecionada = (Pessoa) parent.getItemAtPosition(position);
+                nomeP.setText(pessoaSelecionada.getNome());
+                apelP.setText(pessoaSelecionada.getApelido());
+                emailP.setText(pessoaSelecionada.getEmail());
+                passwdP.setText(pessoaSelecionada.getPassword());
+            }
+        });
 
 
     }
@@ -76,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
     private void inicializaFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase = firebaseDatabase.getInstance();
+
+        firebaseDatabase.setPersistenceEnabled(true); //persistencia
+
         databaseReference = firebaseDatabase.getReference();
     }
 
@@ -106,12 +123,39 @@ public class MainActivity extends AppCompatActivity {
                     p.setPassword(senha);
 
                     databaseReference.child("Pessoa").child(p.getUid()).setValue(p);
-                    Toast.makeText(this,"Adiciondo",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"Adicionado",Toast.LENGTH_LONG).show();
                     limparcampos();
                 }
 
                 break;
             }
+
+            case R.id.icon_del:{
+
+                Pessoa p = new Pessoa();
+                p.setUid(pessoaSelecionada.getUid());
+                databaseReference.child("Pessoa").child(p.getUid()).removeValue();
+                Toast.makeText(this,"Registro Excluído",Toast.LENGTH_LONG).show();
+                limparcampos();
+                break;
+            }
+
+            case R.id.icon_save:{
+
+                Pessoa p = new Pessoa();
+                p.setUid(pessoaSelecionada.getUid());
+                p.setNome(nomeP.getText().toString());
+                p.setApelido(apelP.getText().toString());
+                p.setEmail(emailP.getText().toString());
+                p.setPassword(passwdP.getText().toString());
+
+                databaseReference.child("Pessoa").child(p.getUid()).setValue(p);
+                Toast.makeText(this,"Alterado",Toast.LENGTH_LONG).show();
+                limparcampos();
+
+                break;
+            }
+
             default:break;
         }
         return true;
