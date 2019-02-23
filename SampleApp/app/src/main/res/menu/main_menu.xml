@@ -7,17 +7,17 @@
         app:showAsAction="always"
         android:title="Adicionar">
     </item>
-    
+
     <item android:id="@+id/icon_save"
         android:icon="@drawable/ic_save"
         app:showAsAction="always"
-        android:title="Adicionar">
+        android:title="Salvar">
     </item>
 
     <item android:id="@+id/icon_del"
         android:icon="@drawable/ic_delete"
         app:showAsAction="always"
-        android:title="Adicionar">
+        android:title="Deletar">
     </item>
 
 </menu>
